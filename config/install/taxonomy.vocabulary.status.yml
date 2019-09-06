@@ -1,0 +1,8 @@
+uuid: e53338f1-d27a-494a-9e1e-38287fb4e73a
+langcode: en
+status: true
+dependencies: {  }
+name: 'Status (Contest)'
+vid: status
+description: ''
+weight: 0

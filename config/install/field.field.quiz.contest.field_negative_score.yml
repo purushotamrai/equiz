@@ -1,0 +1,23 @@
+uuid: 69817b7f-a563-4456-8355-5d614ac1568f
+langcode: en
+status: true
+dependencies:
+  config:
+    - equiz.quiz_type.contest
+    - field.storage.quiz.field_negative_score
+id: quiz.contest.field_negative_score
+field_name: field_negative_score
+entity_type: quiz
+bundle: contest
+label: 'Negative Score'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: '-'
+  suffix: ''
+field_type: float

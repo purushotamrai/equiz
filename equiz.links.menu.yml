@@ -1,0 +1,76 @@
+# EQuiz Menu
+equiz.admin:
+  route_name: equiz.admin
+  parent: system.admin
+  description: 'Administer EQuiz.'
+  title: EQuiz
+  weight: -8
+
+equiz.admin_structure:
+  route_name: equiz.admin_structure
+  parent: equiz.admin
+  description: 'Administer questions, quiz etc.'
+  title: Structure
+  weight: -8
+
+# Question menu items definition
+entity.question.collection:
+  title: 'Question list'
+  route_name: entity.question.collection
+  description: 'List Question entities'
+  parent: equiz.admin
+  weight: 100
+
+
+# Question type menu items definition
+entity.question_type.collection:
+  title: 'Question type'
+  route_name: entity.question_type.collection
+  description: 'List Question type (bundles)'
+  parent: equiz.admin_structure
+  weight: 99
+
+# Quiz menu items definition
+entity.quiz.collection:
+  title: 'Quiz list'
+  route_name: entity.quiz.collection
+  description: 'List Quiz entities'
+  parent: equiz.admin
+  weight: 100
+
+
+# Quiz type menu items definition
+entity.quiz_type.collection:
+  title: 'Quiz type'
+  route_name: entity.quiz_type.collection
+  description: 'List Quiz type (bundles)'
+  parent: equiz.admin_structure
+  weight: 99
+
+# Attempt menu items definition
+entity.attempt.collection:
+  title: 'Attempt list'
+  route_name: entity.attempt.collection
+  description: 'List Attempt entities'
+  parent: equiz.admin
+  weight: 100
+
+attempt.admin.structure.settings:
+  title: 'Attempt settings'
+  description: 'Configure Attempt entities'
+  route_name: attempt.settings
+  parent: equiz.admin_structure
+
+# Result menu items definition
+entity.result.collection:
+  title: 'Result list'
+  route_name: entity.result.collection
+  description: 'List Result entities'
+  parent: equiz.admin
+  weight: 100
+
+result.admin.structure.settings:
+  title: 'Result settings'
+  description: 'Configure Result entities'
+  route_name: result.settings
+  parent: equiz.admin_structure

@@ -1,0 +1,22 @@
+uuid: 0e5ba677-54e5-4f9f-b336-0dbef0b4a644
+langcode: en
+status: true
+dependencies:
+  module:
+    - equiz
+_core:
+  default_config_hash: 4zJNbHO9VZtbiTlOPO6nYf-ews64zjRNqecLXfK7ZUY
+id: quiz.field_time_limit
+field_name: field_time_limit
+entity_type: quiz
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

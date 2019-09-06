@@ -1,0 +1,23 @@
+uuid: b7ef8237-86b2-4818-a2ac-62465c671687
+langcode: en
+status: true
+dependencies:
+  config:
+    - equiz.quiz_type.contest
+    - field.storage.quiz.field_randomize
+id: quiz.contest.field_randomize
+field_name: field_randomize
+entity_type: quiz
+bundle: contest
+label: Randomize
+description: 'Randomize Questions and their options'
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

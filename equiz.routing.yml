@@ -1,0 +1,80 @@
+equiz.admin:
+  path: '/admin/equiz'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'EQuiz'
+  requirements:
+    _permission: 'access administration pages'
+
+equiz.admin_structure:
+  path: '/admin/equiz/structure'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Structure'
+  requirements:
+    _permission: 'access administration pages'
+
+equiz.equiz_attempt_controller_start:
+  path: '/equiz/{quiz}/start'
+  defaults:
+    _controller: '\Drupal\equiz\Controller\EquizAttemptController::start'
+    _title: 'Start'
+  options:
+    parameters:
+      quiz:
+        type: entity:quiz
+  requirements:
+    _permission: 'attempt equiz'
+
+equiz.equiz_attempt_controller_process_question:
+  path: '/equiz/{quiz}/{step}'
+  defaults:
+    _controller: '\Drupal\equiz\Controller\EquizAttemptController::processQuestion'
+    _title: 'Quiz In Progress'
+  options:
+    parameters:
+      quiz:
+        type: entity:quiz
+  requirements:
+    _permission: 'attempt equiz'
+    step: '[\d]+'
+
+equiz.equiz_attempt_controller_review:
+  path: '/equiz/{quiz}/review'
+  defaults:
+    _controller: '\Drupal\equiz\Controller\EquizAttemptController::review'
+    _title: 'Review'
+  options:
+    parameters:
+      quiz:
+        type: entity:quiz
+  requirements:
+    _permission: 'attempt equiz'
+
+equiz.equiz_attempt_controller_finish:
+  path: '/equiz/{quiz}/finish/{attempt}'
+  defaults:
+    _controller: '\Drupal\equiz\Controller\EquizAttemptController::finish'
+    _title: 'Finish'
+  options:
+    parameters:
+      quiz:
+        type: entity:quiz
+      attempt:
+        type: entity:attempt
+  requirements:
+    _permission: 'attempt equiz'
+
+equiz.equiz_attempt_controller_timeOver:
+  path: '/equiz/{quiz}/timeover/{attempt}'
+  defaults:
+    _controller: '\Drupal\equiz\Controller\EquizAttemptController::timeOver'
+    _title: 'Time Over'
+  options:
+    parameters:
+      quiz:
+        type: entity:quiz
+      attempt:
+        type: entity:attempt
+  requirements:
+    _permission: 'attempt equiz'

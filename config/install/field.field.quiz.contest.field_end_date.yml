@@ -1,0 +1,24 @@
+uuid: f7600cc4-d4ec-444a-91c2-1e66144a7e88
+langcode: en
+status: true
+dependencies:
+  config:
+    - equiz.quiz_type.contest
+    - field.storage.quiz.field_end_date
+  module:
+    - datetime
+id: quiz.contest.field_end_date
+field_name: field_end_date
+entity_type: quiz
+bundle: contest
+label: 'End Date'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    default_date_type: relative
+    default_date: '+30 days'
+default_value_callback: ''
+settings: {  }
+field_type: datetime

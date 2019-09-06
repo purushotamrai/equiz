@@ -1,0 +1,33 @@
+div.equiz-timer {
+  float:right;
+}
+div.equiz-timer .equiz-timer-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+#edit-skipped-questions a {
+  color: red;
+}
+#edit-marked-questions a {
+  color: purple;
+}
+
+.equiz-progress a.answered {
+  color: green;
+}
+.equiz-progress a.skipped {
+  color: red;
+}
+.equiz-progress a.marked {
+  color: purple;
+}
+.form-item-options label p {
+  display: inline-block;
+}
+.equiz-progress {
+  font-size: 25px;
+  padding: 10px 0;
+  line-height: 1.5;
+}

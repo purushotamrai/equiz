@@ -1,0 +1,173 @@
+<?php
+
+/**
+ * @file
+ * Contains equiz.module.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function equiz_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the equiz module.
+    case 'help.page.equiz':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Online Quiz/Exam') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function equiz_theme() {
+  $theme = [];
+  $theme['question'] = [
+    'render element' => 'elements',
+    'file' => 'question.page.inc',
+    'template' => 'question',
+  ];
+  $theme['question_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'question.page.inc',
+  ];
+  $theme['quiz'] = [
+    'render element' => 'elements',
+    'file' => 'quiz.page.inc',
+    'template' => 'quiz',
+  ];
+  $theme['quiz_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'quiz.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function equiz_theme_suggestions_question(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#question'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'question__' . $sanitized_view_mode;
+  $suggestions[] = 'question__' . $entity->bundle();
+  $suggestions[] = 'question__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'question__' . $entity->id();
+  $suggestions[] = 'question__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}
+
+/**
+ * Implements hook_toolbar_alter().
+ */
+function equiz_toolbar_alter(&$items) {
+  $items['admin_toolbar_tools']['#attached']['library'][] = 'equiz/equiz.admin';
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function equiz_theme_suggestions_quiz(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#quiz'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'quiz__' . $sanitized_view_mode;
+  $suggestions[] = 'quiz__' . $entity->bundle();
+  $suggestions[] = 'quiz__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'quiz__' . $entity->id();
+  $suggestions[] = 'quiz__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}
+
+function shuffle_assoc($list) {
+  if (!is_array($list)) return $list;
+
+  $keys = array_keys($list);
+  shuffle($keys);
+  $random = array();
+  foreach ($keys as $key) {
+    $random[$key] = $list[$key];
+  }
+  return $random;
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function equiz_page_attachments(array &$attachments) {
+  $current_path = \Drupal::service('path.current')->getPath();
+  if (preg_match('/^\/equiz/', $current_path)) {
+    $attachments['#attached']['html_head'][] = [
+      // The data.
+      [
+        '#type' => 'html_tag',
+        '#tag' => 'script',
+        '#value' => 'var equizPageLoadTimer = Date.now(); 
+      function killCopy(e){
+        return false
+      }
+      function reEnable(){
+        return true
+      }
+      document.onselectstart=new Function ("return false")
+      if (window.sidebar){
+        document.onmousedown=killCopy
+        document.onclick=reEnable
+      }',
+      ],
+      // A key, to make it possible to recognize this HTML  element when altering.
+      'equiz-page-load-timer',
+    ];
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_predelete().
+ */
+function equiz_quiz_predelete(EntityInterface $entity) {
+  // Delete all corresponding attempts and results.
+  $quiz_id = $entity->id();
+  $entityTypeManager = Drupal::entityTypeManager();
+
+  $query = \Drupal::entityQuery('attempt');
+  $query->condition('field_quiz', $quiz_id);
+  $attempts = $query->execute();
+
+  if ($attempts) {
+    $attempts = array_values($attempts);
+    $storage_handler = $entityTypeManager->getStorage('attempt');
+    $entities = $storage_handler->loadMultiple($attempts);
+    $storage_handler->delete($entities);
+  }
+
+  $query = \Drupal::entityQuery('result');
+  $query->condition('field_quiz', $quiz_id);
+  $results = $query->execute();
+
+  if ($results) {
+    $results = array_values($results);
+    $storage_handler = $entityTypeManager->getStorage('result');
+    $entities = $storage_handler->loadMultiple($results);
+    $storage_handler->delete($entities);
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_predelete().
+ */
+function equiz_attempt_predelete(EntityInterface $entity) {
+  // Cleanup private temp stores.
+  Drupal::service('equiz.attempt_manager')->performCleanup($entity);
+}

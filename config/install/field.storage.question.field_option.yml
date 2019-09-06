@@ -1,0 +1,23 @@
+uuid: bc1bfabf-da10-4ebd-bf84-fe3a4eaf2547
+langcode: en
+status: true
+dependencies:
+  module:
+    - equiz
+_core:
+  default_config_hash: 7woWH9yM2MEjF-SNPUXb-FRlB-_XWm3his-UhXBaAuc
+id: question.field_option
+field_name: field_option
+entity_type: question
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

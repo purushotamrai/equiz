@@ -1,0 +1,36 @@
+uuid: 2687e607-b9ae-489d-9696-9cdcc94e0a96
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.question_browser
+    - views.view.question_browser_selection_display_
+  module:
+    - views
+_core:
+  default_config_hash: xn8vU0EbKtxlEBdyo1XBDNaX4cnNmFKeI2IoH0lTDek
+name: question_browser
+label: 'Question Browser'
+display: iframe
+display_configuration:
+  width: '975'
+  height: '600'
+  link_text: 'Select Questions'
+  auto_open: false
+selection_display: view
+selection_display_configuration:
+  view: question_browser_selection_display_
+  view_display: default
+widget_selector: single
+widget_selector_configuration: {  }
+widgets:
+  d83d06e0-c74f-40cf-930e-872e01c9d8d9:
+    settings:
+      view: question_browser
+      view_display: entity_browser_1
+      submit_text: 'Select questions'
+      auto_select: false
+    uuid: d83d06e0-c74f-40cf-930e-872e01c9d8d9
+    weight: 1
+    label: 'Questions List'
+    id: view

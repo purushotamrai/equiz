@@ -1,0 +1,20 @@
+uuid: ab5623be-7385-4ae2-90e2-103aebe7f0b4
+langcode: en
+status: true
+dependencies:
+  module:
+    - equiz
+_core:
+  default_config_hash: JVIUfsbK36JKnz2pxnUPviuyGF3FA5v1HJynNl70Iok
+id: quiz.field_randomize
+field_name: field_randomize
+entity_type: quiz
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: 588405c7-7c01-44ef-bc0c-22ad4462843c
+langcode: en
+status: true
+dependencies:
+  module:
+    - equiz
+    - text
+_core:
+  default_config_hash: 0vCg0yILnbcNMzBc2bsjCHJISXjjwYscwnhMYtITPPk
+id: question.field_question
+field_name: field_question
+entity_type: question
+type: text_with_summary
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

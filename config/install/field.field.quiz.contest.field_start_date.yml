@@ -1,0 +1,24 @@
+uuid: 2a2a7b65-c6c7-4cc3-afaa-8449af269aef
+langcode: en
+status: true
+dependencies:
+  config:
+    - equiz.quiz_type.contest
+    - field.storage.quiz.field_start_date
+  module:
+    - datetime
+id: quiz.contest.field_start_date
+field_name: field_start_date
+entity_type: quiz
+bundle: contest
+label: 'Start Date'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

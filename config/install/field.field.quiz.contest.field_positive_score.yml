@@ -1,0 +1,23 @@
+uuid: 20b111a4-205d-4ef4-b4f4-598a85152fef
+langcode: en
+status: true
+dependencies:
+  config:
+    - equiz.quiz_type.contest
+    - field.storage.quiz.field_positive_score
+id: quiz.contest.field_positive_score
+field_name: field_positive_score
+entity_type: quiz
+bundle: contest
+label: 'Positive Score'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: +
+  suffix: ''
+field_type: float

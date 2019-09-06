@@ -1,0 +1,29 @@
+uuid: 661a45eb-39c7-48ec-bfd3-4713994c8efc
+langcode: en
+status: true
+dependencies:
+  config:
+    - equiz.quiz_type.contest
+    - field.storage.quiz.field_winners
+id: quiz.contest.field_winners
+field_name: field_winners
+entity_type: quiz
+bundle: contest
+label: Winners
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: uid
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

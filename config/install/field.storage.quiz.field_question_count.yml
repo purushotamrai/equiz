@@ -1,0 +1,22 @@
+uuid: 7afb9a61-aa2f-4435-bd1c-549c5d954933
+langcode: en
+status: true
+dependencies:
+  module:
+    - equiz
+_core:
+  default_config_hash: fCGGh9qCS46xoo50Uf18DPCbJG19SGk80Pp920wsO8c
+id: quiz.field_question_count
+field_name: field_question_count
+entity_type: quiz
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

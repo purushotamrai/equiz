@@ -1,0 +1,25 @@
+uuid: f252c665-94eb-4a78-b4a6-2f1f901136bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - equiz.question_type.multiple_choice
+    - field.storage.question.field_weight
+  module:
+    - options
+_core:
+  default_config_hash: CdfqWwB6PUSgSr7j_5w0dk25ShDiofc189TJwpJfYcM
+id: question.multiple_choice.field_weight
+field_name: field_weight
+entity_type: question
+bundle: multiple_choice
+label: Weight
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

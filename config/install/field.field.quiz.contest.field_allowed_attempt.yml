@@ -1,0 +1,23 @@
+uuid: 97c0da2c-f065-4fd1-9997-868d3a394fe4
+langcode: en
+status: true
+dependencies:
+  config:
+    - equiz.quiz_type.contest
+    - field.storage.quiz.field_allowed_attempt
+id: quiz.contest.field_allowed_attempt
+field_name: field_allowed_attempt
+entity_type: quiz
+bundle: contest
+label: 'Allowed Attempt'
+description: 'The number of allowed attempts for the user. Leave empty or 0 for unlimited attempts.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

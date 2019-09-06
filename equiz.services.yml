@@ -1,0 +1,7 @@
+services:
+  equiz.attempt_manager:
+    class: Drupal\equiz\AttemptManager
+    arguments: ['@tempstore.private', '@current_user', '@equiz.time_manager']
+  equiz.time_manager:
+    class: Drupal\equiz\TimeManager
+    arguments: ['@tempstore.private', '@current_user', '@entity_type.manager']

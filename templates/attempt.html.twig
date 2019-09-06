@@ -1,0 +1,22 @@
+{#
+/**
+ * @file attempt.html.twig
+ * Default theme implementation to present Attempt data.
+ *
+ * This template is used when viewing Attempt pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_attempt()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('attempt') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

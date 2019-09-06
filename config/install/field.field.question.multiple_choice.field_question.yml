@@ -1,0 +1,24 @@
+uuid: e271ba8b-e084-4a0f-b7e0-c67f82445ce8
+langcode: en
+status: true
+dependencies:
+  config:
+    - equiz.question_type.multiple_choice
+    - field.storage.question.field_question
+  module:
+    - text
+_core:
+  default_config_hash: jGyGLpLXwTvilPQxQKOqSIpbup4in-mJXl9T0cRXv2E
+id: question.multiple_choice.field_question
+field_name: field_question
+entity_type: question
+bundle: multiple_choice
+label: Question
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

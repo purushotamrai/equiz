@@ -1,0 +1,248 @@
+uuid: bd5770db-2480-4a68-8180-5e74ec2deed6
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.question_browser
+    - equiz.quiz_type.contest
+    - field.field.quiz.contest.field_allowed_attempt
+    - field.field.quiz.contest.field_end_date
+    - field.field.quiz.contest.field_negative_score
+    - field.field.quiz.contest.field_participants
+    - field.field.quiz.contest.field_positive_score
+    - field.field.quiz.contest.field_question_count
+    - field.field.quiz.contest.field_questions
+    - field.field.quiz.contest.field_randomize
+    - field.field.quiz.contest.field_start_date
+    - field.field.quiz.contest.field_status
+    - field.field.quiz.contest.field_time_limit
+    - field.field.quiz.contest.field_total_participants
+    - field.field.quiz.contest.field_winners
+  module:
+    - datetime
+    - entity_browser
+    - field_group
+third_party_settings:
+  field_group:
+    group_node_main:
+      children:
+        - name
+        - group_quiz
+        - field_questions
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: 'layout-region layout-region-node-main'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Node Main'
+      region: content
+    group_quiz:
+      children:
+        - group_settings
+        - group_availability
+        - group_scoring
+        - group_contest_settings
+      parent_name: group_node_main
+      weight: 2
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: Quiz
+      region: content
+    group_settings:
+      children:
+        - field_question_count
+        - field_randomize
+      parent_name: group_quiz
+      weight: 4
+      format_type: tab
+      format_settings:
+        description: ''
+        formatter: open
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Quiz Settings'
+      region: content
+    group_availability:
+      children:
+        - field_allowed_attempt
+        - field_time_limit
+        - field_start_date
+        - field_end_date
+      parent_name: group_quiz
+      weight: 5
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Availability
+      region: content
+    group_scoring:
+      children:
+        - field_positive_score
+        - field_negative_score
+      parent_name: group_quiz
+      weight: 6
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Scoring
+      region: content
+    group_contest_settings:
+      children:
+        - field_status
+        - field_total_participants
+        - field_participants
+        - field_winners
+      parent_name: group_quiz
+      weight: 7
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Contest Settings'
+      region: content
+id: quiz.contest.default
+targetEntityType: quiz
+bundle: contest
+mode: default
+content:
+  field_allowed_attempt:
+    weight: 7
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_end_date:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_negative_score:
+    weight: 13
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_participants:
+    weight: 28
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_positive_score:
+    weight: 12
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_question_count:
+    weight: 5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_questions:
+    weight: 3
+    settings:
+      entity_browser: question_browser
+      field_widget_display: label
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_edit: false
+      field_widget_replace: false
+      open: false
+      field_widget_display_settings: {  }
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+  field_randomize:
+    weight: 6
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_start_date:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_status:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_time_limit:
+    weight: 8
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_total_participants:
+    weight: 27
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_winners:
+    weight: 29
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  name:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  user_id:
+    type: entity_reference_autocomplete
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden: {  }

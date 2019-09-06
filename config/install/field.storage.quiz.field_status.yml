@@ -1,0 +1,20 @@
+uuid: ceeca42b-910a-4377-842e-6fdc2fe3f80d
+langcode: en
+status: true
+dependencies:
+  module:
+    - equiz
+    - taxonomy
+id: quiz.field_status
+field_name: field_status
+entity_type: quiz
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

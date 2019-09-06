@@ -1,0 +1,21 @@
+uuid: 20d7c71e-3a78-45ca-a86b-41aa40b14c99
+langcode: en
+status: true
+dependencies:
+  config:
+    - equiz.question_type.multiple_choice
+    - field.storage.question.field_option
+_core:
+  default_config_hash: Jokzke3ymKMycr7gwaUUogauiTV13LNO4OiwUHXES50
+id: question.multiple_choice.field_option
+field_name: field_option
+entity_type: question
+bundle: multiple_choice
+label: Option
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

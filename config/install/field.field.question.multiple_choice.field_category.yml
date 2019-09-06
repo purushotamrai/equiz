@@ -1,0 +1,31 @@
+uuid: 47d8f4a5-c0e7-4141-867d-e1dfccaf0c9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - equiz.question_type.multiple_choice
+    - field.storage.question.field_category
+    - taxonomy.vocabulary.category
+_core:
+  default_config_hash: XB3PldfDr-5JSsW8FwtR8_91ZUfiv8okIJyP0g8MwA8
+id: question.multiple_choice.field_category
+field_name: field_category
+entity_type: question
+bundle: multiple_choice
+label: Category
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      category: category
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

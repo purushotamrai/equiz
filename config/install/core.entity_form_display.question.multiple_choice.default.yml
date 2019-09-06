@@ -1,0 +1,95 @@
+uuid: ca1afd67-e152-465b-9dee-75bfd38b7a34
+langcode: en
+status: true
+dependencies:
+  config:
+    - equiz.question_type.multiple_choice
+    - field.field.question.multiple_choice.field_category
+    - field.field.question.multiple_choice.field_option
+    - field.field.question.multiple_choice.field_question
+    - field.field.question.multiple_choice.field_weight
+  module:
+    - field_group
+    - text
+third_party_settings:
+  field_group:
+    group_node_main:
+      children:
+        - name
+        - field_question
+        - field_option
+        - field_weight
+        - field_category
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: 'layout-region layout-region-node-main'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Node Main'
+      region: content
+_core:
+  default_config_hash: 9xIUWbFDLh2KoejIdsfupA9yO1A3U3aDsbe7-5XRwxU
+id: question.multiple_choice.default
+targetEntityType: question
+bundle: multiple_choice
+mode: default
+content:
+  field_category:
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_option:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_question:
+    weight: 2
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_weight:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  name:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  user_id:
+    type: entity_reference_autocomplete
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden: {  }

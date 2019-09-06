@@ -1,0 +1,28 @@
+uuid: f837b3e2-fc60-4da4-a6da-e73191f6c882
+langcode: en
+status: true
+dependencies:
+  config:
+    - equiz.question_type.multiple_choice
+    - equiz.quiz_type.contest
+    - field.storage.quiz.field_questions
+id: quiz.contest.field_questions
+field_name: field_questions
+entity_type: quiz
+bundle: contest
+label: Questions
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:question'
+  handler_settings:
+    target_bundles:
+      multiple_choice: multiple_choice
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

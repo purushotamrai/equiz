@@ -1,0 +1,21 @@
+uuid: e992b8e7-9c9f-469e-ae80-21031b2d08d5
+langcode: en
+status: true
+dependencies:
+  module:
+    - equiz
+_core:
+  default_config_hash: zVsebTowarhlLejV5bpmeD8vgvpsU3vUx7F91Ky7aZ0
+id: quiz.field_questions
+field_name: field_questions
+entity_type: quiz
+type: entity_reference
+settings:
+  target_type: question
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

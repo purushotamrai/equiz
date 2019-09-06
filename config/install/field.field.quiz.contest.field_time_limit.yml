@@ -1,0 +1,23 @@
+uuid: 73f53d5b-16fe-4624-9a2c-e6de0c9dc6c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - equiz.quiz_type.contest
+    - field.storage.quiz.field_time_limit
+id: quiz.contest.field_time_limit
+field_name: field_time_limit
+entity_type: quiz
+bundle: contest
+label: 'Time Limit'
+description: 'Time Limit for the quiz In seconds. Leave empty or 0 for no time limit'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

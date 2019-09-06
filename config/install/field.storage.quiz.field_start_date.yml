@@ -1,0 +1,22 @@
+uuid: b245cc00-d7f0-4327-906d-5d705b11c4d3
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - equiz
+_core:
+  default_config_hash: lyRr9C4bwDAB7n86jitWe5oJXlIhiWlwQ9NTbicw7Lg
+id: quiz.field_start_date
+field_name: field_start_date
+entity_type: quiz
+type: datetime
+settings:
+  datetime_type: datetime
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

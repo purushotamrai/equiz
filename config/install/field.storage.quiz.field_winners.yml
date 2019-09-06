@@ -1,0 +1,20 @@
+uuid: 9e2a7c60-830a-43c4-904b-2a028f508354
+langcode: en
+status: true
+dependencies:
+  module:
+    - equiz
+    - user
+id: quiz.field_winners
+field_name: field_winners
+entity_type: quiz
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

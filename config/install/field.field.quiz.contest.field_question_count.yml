@@ -1,0 +1,23 @@
+uuid: 3f9ec8c1-e036-4b34-ab53-52d2a1fa1039
+langcode: en
+status: true
+dependencies:
+  config:
+    - equiz.quiz_type.contest
+    - field.storage.quiz.field_question_count
+id: quiz.contest.field_question_count
+field_name: field_question_count
+entity_type: quiz
+bundle: contest
+label: 'Question Count (Total)'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

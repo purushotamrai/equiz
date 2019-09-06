@@ -1,0 +1,22 @@
+uuid: 722dd9ef-5a97-47d5-9e99-aad635a85e1f
+langcode: en
+status: true
+dependencies:
+  module:
+    - equiz
+    - taxonomy
+_core:
+  default_config_hash: 9_eCN5bxPN4UsMSxAEM1MT1GykbhHj0ghVbxfxJxU1w
+id: question.field_category
+field_name: field_category
+entity_type: question
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

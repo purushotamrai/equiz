@@ -1,0 +1,15 @@
+equiz.admin:
+  version: VERSION
+  css:
+    layout:
+      assets/css/equiz.module.css: {}
+
+equiz.quiz:
+  version: VERSION
+  css:
+    theme:
+      assets/css/equiz.quiz.css: {}
+  js:
+    assets/js/equiz.quiz.js: {}
+  dependencies:
+    - core/jquery

@@ -1,0 +1,13 @@
+{
+    "name": "equiz",
+    "type": "drupal-module",
+    "description": "Online Quiz/Exam",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/equiz",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/equiz",
+        "source": "http://cgit.drupalcode.org/equiz"
+    }
+}

@@ -1,0 +1,29 @@
+uuid: 110643a8-1036-4a16-96a9-92453268b96d
+langcode: en
+status: true
+dependencies:
+  config:
+    - equiz.quiz_type.contest
+    - field.storage.quiz.field_status
+    - taxonomy.vocabulary.status
+id: quiz.contest.field_status
+field_name: field_status
+entity_type: quiz
+bundle: contest
+label: Status
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      status: status
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

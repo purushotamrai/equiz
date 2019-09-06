@@ -1,0 +1,20 @@
+uuid: 59caa335-e7ab-40db-ae7e-98a6944bce01
+langcode: en
+status: true
+dependencies:
+  module:
+    - equiz
+_core:
+  default_config_hash: XJ2sKa2d6wagx2Bt4ixjc-8q0hTSIRY3XSXMjfF_Ylk
+id: quiz.field_negative_score
+field_name: field_negative_score
+entity_type: quiz
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

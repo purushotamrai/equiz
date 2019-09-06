@@ -1,0 +1,23 @@
+uuid: 2ca52ee4-a1c0-43cb-916f-7bee3af43fd2
+langcode: en
+status: true
+dependencies:
+  config:
+    - equiz.quiz_type.contest
+    - field.storage.quiz.field_total_participants
+id: quiz.contest.field_total_participants
+field_name: field_total_participants
+entity_type: quiz
+bundle: contest
+label: 'Total Participants'
+description: 'The total number of allowed participants. Leave 0 for no limit.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

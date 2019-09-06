@@ -1,0 +1,22 @@
+uuid: 311ce324-8742-4b0f-852f-d1ad0c846bc0
+langcode: en
+status: true
+dependencies:
+  module:
+    - equiz
+_core:
+  default_config_hash: rVnPmGp8Ye9xu20VlWxKvgzIZn6bb_Nli2FfhmPoe_U
+id: quiz.field_allowed_attempt
+field_name: field_allowed_attempt
+entity_type: quiz
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
