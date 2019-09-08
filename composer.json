@@ -10,39 +10,8 @@
         "issues": "https://www.drupal.org/project/issues/equiz",
         "source": "http://cgit.drupalcode.org/equiz"
     },
-    "repositories": [
-        {
-            "type":"package",
-            "package": {
-                "name": "brilsergei/county",
-                "version":"master",
-                "type": "drupal-library",
-                "source": {
-                    "url": "https://github.com/brilsergei/county.git",
-                    "type": "git",
-                    "reference":"master"
-                }
-            }
-        },
-        {
-            "type":"package",
-            "package": {
-                "name": "purushotam/jquery.countdown",
-                "version":"master",
-                "type": "drupal-library",
-                "extra": {
-                   "installer-name": "jquery.countdown"
-                },
-                "source": {
-                    "url": "https://github.com/purushotamrai/jquery.countdown.git",
-                    "type": "git",
-                    "reference":"master"
-                }
-            }
-        }
-    ],
     "require": {
-        "brilsergei/county": "master",
-        "purushotam/jquery.countdown": "master"
+        "purushotam/jquery.countdown": "master",
+        "drupal/field_timer": "^1.1"
     }
 }
